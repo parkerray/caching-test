@@ -2,8 +2,8 @@ import { NextResponse, NextRequest } from 'next/server';
 import { revalidatePath } from 'next/cache';
 
 export async function GET(req) {
-	const searchParams = new URLSearchParams(req.query);
-	const shouldRevalidate = searchParams.get('revalidate') === 'true';
+	const shouldRevalidate = req.nextUrl.searchParams.get('revalidate') === 1;
+	console.log(shouldRevalidate);
 
 	if (shouldRevalidate) {
 		revalidatePath('/api/configfetch2');
