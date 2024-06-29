@@ -7,9 +7,9 @@ export async function GET() {
 			headers: {
 				Authorization: `Bearer ${process.env.VERCEL_TOKEN}`,
 			},
-			// next: {
-			// 	revalidate: 60,
-			// },
+			next: {
+				revalidate: 60,
+			},
 		}
 	);
 	const responseBody = await response.json();
