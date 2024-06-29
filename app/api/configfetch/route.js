@@ -20,3 +20,5 @@ export async function GET() {
 
 	return res;
 }
+
+// CONCLUSION: this appears to be a good option that is straightforward and reliable
